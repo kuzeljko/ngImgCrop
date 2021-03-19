@@ -1400,7 +1400,7 @@ crop.factory('cropHost', ['$document', 'cropAreaCircle', 'cropAreaSquare', 'crop
 
     // Dimensions
     var minCanvasDims=[100,100],
-        maxCanvasDims=[300,300];
+        maxCanvasDims=[400,400];
 
     // Result Image size
     var resImgSize=200;
@@ -1457,7 +1457,7 @@ crop.factory('cropHost', ['$document', 'cropAreaCircle', 'cropAreaSquare', 'crop
           canvasDims[1]=minCanvasDims[1];
           canvasDims[0]=canvasDims[1]*imageRatio;
         }
-        elCanvas.prop('width',canvasDims[0]).prop('height',canvasDims[1]).css({'margin-left': -canvasDims[0]/2+'px', 'margin-top': -canvasDims[1]/2+'px'});
+        elCanvas.prop('width',canvasDims[0]).prop('height',canvasDims[1]).css({'margin-left': 0'px', 'margin-top': 0+'px'});
 
         theArea.setX(ctx.canvas.width/2);
         theArea.setY(ctx.canvas.height/2);
@@ -1858,16 +1858,16 @@ crop.directive('imgCrop', ['$timeout', 'cropHost', 'cropPubSub', function($timeo
       });
 
       // Update CropHost dimensions when the directive element is resized
-      scope.$watch(
-        function () {
-          return [element[0].clientWidth, element[0].clientHeight];
-        },
-        function (value) {
-          cropHost.setMaxDimensions(value[0],value[1]);
-          updateResultImage(scope);
-        },
-        true
-      );
+      // scope.$watch(
+      //   function () {
+      //     return [element[0].clientWidth, element[0].clientHeight];
+      //   },
+      //   function (value) {
+      //     cropHost.setMaxDimensions(value[0],value[1]);
+      //     updateResultImage(scope);
+      //   },
+      //   true
+      // );
 
       // Destroy CropHost Instance when the directive is destroying
       scope.$on('$destroy', function(){
