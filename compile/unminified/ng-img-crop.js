@@ -1457,7 +1457,7 @@ crop.factory('cropHost', ['$document', 'cropAreaCircle', 'cropAreaSquare', 'crop
           canvasDims[1]=minCanvasDims[1];
           canvasDims[0]=canvasDims[1]*imageRatio;
         }
-        elCanvas.prop('width',canvasDims[0]).prop('height',canvasDims[1]).css({'margin-left': 0'px', 'margin-top': 0+'px'});
+        elCanvas.prop('width',canvasDims[0]).prop('height',canvasDims[1]).css({'margin-left': 0+'px', 'margin-top': 0+'px'});
 
         theArea.setX(ctx.canvas.width/2);
         theArea.setY(ctx.canvas.height/2);
